@@ -1,0 +1,10 @@
+version: "2"
+
+services:
+  bot:
+    build: .
+    image: bright_n_kov/inversion_bot:1.0
+    volumes:
+      - $KEY_STORAGE:/keys
+    environment:
+      TOKEN_FILE_NAME: $TOKEN_FILE_NAME
