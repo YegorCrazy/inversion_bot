@@ -1,8 +1,9 @@
-import cv2
+import numpy
+from PIL import Image
 import argparse
 
 def open_image (image_name):
-    image = cv2.imread(image_name)
+    image = numpy.imread(image_name)
     return image
     
 def invert_image (input_image, radius_part = 0.17):
@@ -31,7 +32,8 @@ def invert_image (input_image, radius_part = 0.17):
     return result_image
     
 def save_image (image, image_name):
-    return cv2.imwrite(image_name, image)
+    image_obj = Image.fromarray(image)
+    image_obj.save(image_name)
     
 if __name__ == '__main__':
     

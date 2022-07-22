@@ -1,7 +1,6 @@
 FROM python
 
-RUN ["apt-get", "install", "python3-opencv"]
-RUN ["pip", "install", "telebot"]
+RUN ["pip", "install", "pyTelegramBotAPI", "numpy", "pillow"]
 
 COPY ./inverter.py /code/inverter.py
 COPY ./bot.py /code/bot.py
