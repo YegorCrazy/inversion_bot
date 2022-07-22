@@ -3,8 +3,8 @@ from PIL import Image
 import argparse
 
 def open_image (image_name):
-    image = numpy.imread(image_name)
-    return image
+    image = Image.open(image_name)
+    return numpy.array(image)
     
 def invert_image (input_image, radius_part = 0.17):
     result_image = input_image.copy()
